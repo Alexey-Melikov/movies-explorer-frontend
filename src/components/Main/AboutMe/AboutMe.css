@@ -117,7 +117,8 @@
   }
 
   .about-me__img {
-    justify-self: flex-start;
+    width: 100%;
+    height: auto;
   }
 
   .about-me__title {
@@ -144,6 +145,7 @@
   .about-me__img {
     width: 292px;
     height: 352px;
+    justify-self: center;
   }
   .about-me__title {
     font-size: 30px;

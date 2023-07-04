@@ -8,7 +8,7 @@ function FilterCheckbox() {
         type="checkbox"
         name="filter-check-box__input"
         id="filter-check-box__input"
-        className="filter-check-box__input"
+        className="filter-check-box__input hover"
         role="switch"
       ></input>
     </section>

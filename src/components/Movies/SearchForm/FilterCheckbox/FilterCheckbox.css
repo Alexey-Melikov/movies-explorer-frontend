@@ -47,7 +47,6 @@ input[role="switch"] {
   user-select: none;
   outline: none;
   filter: grayscale(1);
-  cursor: pointer;
 }
 
 input[role="switch"]:checked {

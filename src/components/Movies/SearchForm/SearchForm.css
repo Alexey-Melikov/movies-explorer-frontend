@@ -21,6 +21,10 @@
 
 .search-film__input:focus {
   outline: none;
+  border-left: 2px ridge #4285f4;
+  border-right: 2px ridge #4285f4;
+  border-radius: 20px;
+  padding: 0 15px;
 }
 
 .search-film__button {

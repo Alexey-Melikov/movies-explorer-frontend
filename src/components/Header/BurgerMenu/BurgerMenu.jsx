@@ -7,7 +7,7 @@ import headerLogoMovie from "../../../images/logo/header-logo-movie.svg";
 
 function BurgerMenu() {
   const [isBurgerMenuOpenButton, setIsBurgerMenuOpenButton] = useState(
-    "burger-menu__button"
+    "burger-menu__button hover"
   );
 
   const [isBurgerMenuOpenNav, setIsBurgerMenuOpenNav] = useState(
@@ -16,9 +16,9 @@ function BurgerMenu() {
 
   function handleButtonOpen() {
     isBurgerMenuOpenButton.includes("burger-menu__button active")
-      ? setIsBurgerMenuOpenButton("burger-menu__button") ||
+      ? setIsBurgerMenuOpenButton("burger-menu__button hover") ||
         setIsBurgerMenuOpenNav("burger-menu__navigation")
-      : setIsBurgerMenuOpenButton("burger-menu__button active") ||
+      : setIsBurgerMenuOpenButton("burger-menu__button active hover") ||
         setIsBurgerMenuOpenNav("burger-menu__navigation active");
   }
 
@@ -53,6 +53,7 @@ function BurgerMenu() {
             Сохранённые фильмы
           </Link>
           <Link
+            to={"/profile"}
             onClick={handleButtonOpen}
             className="burger-menu__link-button hover"
           >

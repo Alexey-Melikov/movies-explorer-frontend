@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 74px;
+  padding-bottom: 70px;
 }
 
 .profile__title {
@@ -115,6 +116,7 @@
 @media screen and (max-width: 768px) {
   .profile {
     padding-top: 236px;
+    padding-bottom: 200px;
   }
   .profile__form {
     padding-top: 86px;
@@ -131,6 +133,7 @@
 @media screen and (max-width: 450px) {
   .profile {
     padding-top: 70px;
+    padding-bottom: 30px;
   }
   .profile__form {
     width: 83%;

@@ -37,6 +37,14 @@
   width: 21px;
 }
 
+.movies-card__delete {
+  background-image: url("../../../images/logo/movie-card-delete.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+  width: 21px;
+}
+
 .movies-card__container {
   display: flex;
   justify-content: space-between;
