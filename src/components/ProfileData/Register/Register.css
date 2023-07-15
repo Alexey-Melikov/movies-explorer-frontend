@@ -88,6 +88,18 @@
   display: block;
 }
 
+.register__span-submit-error {
+  color: #ee3465;
+  font-size: 15px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 10px;
+  justify-self: center;
+  text-align: center;
+}
+
 .register__button {
   height: 45px;
   border-radius: 3px;

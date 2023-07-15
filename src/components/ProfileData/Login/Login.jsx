@@ -2,12 +2,14 @@ import "./Login.css";
 
 import { Link } from "react-router-dom";
 import { useFormValidation } from "../../../utils/useFormValidation";
+import { REGEX_EMAIL } from "../../../utils/constans";
 
-function Login() {
+function Login({ handleAuthorize, errMessageLogin }) {
   const { values, errors, isValid, handleChange } = useFormValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
+    handleAuthorize(values.email, values.password);
   }
   function spanClasName(name) {
     return `login__input-span ${
@@ -38,6 +40,7 @@ function Login() {
               autoComplete="off"
               minLength="5"
               maxLength="40"
+              pattern={REGEX_EMAIL}
               required
               className="login__input"
               onChange={handleChange}
@@ -65,8 +68,10 @@ function Login() {
               {errors["password"]}
             </span>
           </label>
+          <span className="login__span-submit-error">{errMessageLogin}</span>
           <button
             type="submit"
+            disabled={!isValid}
             className={
               isValid
                 ? "login__button hover login__button-active"

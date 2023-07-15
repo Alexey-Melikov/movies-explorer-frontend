@@ -3,6 +3,11 @@
   position: relative;
 }
 
+.movies-card__link {
+  margin: 0;
+  padding: 0;
+}
+
 .movies-card__img {
   width: 100%;
   object-fit: cover;

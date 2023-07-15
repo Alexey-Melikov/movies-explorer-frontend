@@ -1,12 +1,14 @@
 import "./MoviesCard.css";
 
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
 
-function MoviesCard({ card }) {
-  const [buttonClassName, setButtonClassName] = useState(
-    "movies-card__button hover"
-  );
+function MoviesCard({
+  card,
+  handleLikeMovie,
+  handleDeleteMovie,
+  savedMovies,
+  cardTypeSaved,
+}) {
   const location = useLocation();
 
   function getDuration(card) {
@@ -16,29 +18,54 @@ function MoviesCard({ card }) {
   }
 
   function handleSaveMovie() {
-    buttonClassName.includes("movies-card__saved")
-      ? setButtonClassName("movies-card__button hover")
-      : setButtonClassName("movies-card__button hover movies-card__saved");
+    if (cardTypeSaved) {
+      handleDeleteMovie(
+        savedMovies.filter((item) => item.movieId === card.id)[0]
+      );
+    } else {
+      handleLikeMovie(card);
+    }
   }
+
+  function handleRemoveMovie() {
+    handleDeleteMovie(card);
+  }
+
   return (
     <>
       <li className="movies-card">
-        <img
-          className="movies-card__img"
-          alt={card.nameRU}
-          src={`https://api.nomoreparties.co/${card.image.url}`}
-        ></img>
+        <a
+          className="movies-card__link hover"
+          target="_blank"
+          rel="noreferrer"
+          href={card.trailerLink}
+        >
+          <img
+            className="movies-card__img"
+            alt={card.nameRU}
+            src={
+              location.pathname === "/movies"
+                ? `https://api.nomoreparties.co/${card.image.url}`
+                : card.image
+            }
+          ></img>
+        </a>
         {location.pathname === "/movies" ? (
           <button
             aria-label="Сохранить"
             type="button"
             onClick={handleSaveMovie}
-            className={buttonClassName}
+            className={
+              cardTypeSaved
+                ? "movies-card__button hover movies-card__saved"
+                : "movies-card__button hover"
+            }
           >
             Сохранить
           </button>
         ) : (
           <button
+            onClick={handleRemoveMovie}
             className="movies-card__button hover movies-card__delete"
             type="button"
             aria-label="Удалить"

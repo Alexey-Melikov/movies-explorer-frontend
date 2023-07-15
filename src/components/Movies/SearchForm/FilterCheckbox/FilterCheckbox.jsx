@@ -1,6 +1,6 @@
 import "./FilterCheckbox.css";
 
-function FilterCheckbox() {
+function FilterCheckbox({ handleCheckboxClick,checkboxStatus }) {
   return (
     <section className="filter-check-box">
       <p className="filter-check-box__description">Короткометражки</p>
@@ -10,10 +10,11 @@ function FilterCheckbox() {
         id="filter-check-box__input"
         className="filter-check-box__input hover"
         role="switch"
+        checked={checkboxStatus}
+        onChange={handleCheckboxClick}
       ></input>
     </section>
   );
 }
 
 export default FilterCheckbox;
-

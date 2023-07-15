@@ -1,13 +1,15 @@
 import "./Register.css";
+import { REGEX_EMAIL } from "../../../utils/constans";
 
 import { Link } from "react-router-dom";
 import { useFormValidation } from "../../../utils/useFormValidation";
 
-function Register() {
+function Register({ handleRegister, errMessageRegister }) {
   const { values, errors, isValid, handleChange } = useFormValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
+    handleRegister(values.name, values.email, values.password);
   }
   function spanClasName(name) {
     return `register__input-span ${
@@ -54,6 +56,7 @@ function Register() {
               name="email"
               id="registerEmail"
               placeholder="E-mail"
+              pattern={REGEX_EMAIL}
               autoComplete="off"
               minLength="5"
               maxLength="40"
@@ -83,6 +86,9 @@ function Register() {
               {errors["password"]}
             </span>
           </label>
+          <span className="register__span-submit-error">
+            {errMessageRegister}
+          </span>
           <button
             type="submit"
             disabled={!isValid}
