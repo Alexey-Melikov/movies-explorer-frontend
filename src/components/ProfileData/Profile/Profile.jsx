@@ -3,7 +3,7 @@ import "./Profile.css";
 import { Link } from "react-router-dom";
 import { CurrentUserContext } from "../../../context/CurrentUserContext";
 import { useFormValidation } from "../../../utils/useFormValidation";
-import { REGEX_EMAIL } from "../../../utils/constans";
+import { REGEX_EMAIL, REGEX_NAME } from "../../../utils/constans";
 
 // Components =>
 import Header from "../../Header/Header";
@@ -74,6 +74,7 @@ function Profile({
                 placeholder={currentUser.name}
                 id="profile__input_type_name"
                 name="profileName"
+                pattern={REGEX_NAME}
                 type="text"
                 onChange={handleChange}
               />

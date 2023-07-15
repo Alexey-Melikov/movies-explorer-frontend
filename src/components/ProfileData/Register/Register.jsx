@@ -1,5 +1,5 @@
 import "./Register.css";
-import { REGEX_EMAIL } from "../../../utils/constans";
+import { REGEX_EMAIL, REGEX_NAME } from "../../../utils/constans";
 
 import { Link } from "react-router-dom";
 import { useFormValidation } from "../../../utils/useFormValidation";
@@ -41,6 +41,7 @@ function Register({ handleRegister, errMessageRegister }) {
               autoComplete="off"
               minLength="5"
               maxLength="40"
+              pattern={REGEX_NAME}
               required
               value={values["name"] ?? ""}
               onChange={handleChange}
