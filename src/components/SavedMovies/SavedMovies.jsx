@@ -13,40 +13,19 @@ function SavedMovies({ loggedIn, savedMovies, handleDeleteMovie }) {
   const [isPreloader, setIsPreloader] = useState(false);
   const [movieRequest, setMovieRequest] = useState("");
   const [checkboxStatus, setCheckboxStatus] = useState(false);
-  const [movies, setMovies] = useState([]);
-
-  function getLocalData() {
-    if (
-      localStorage.getItem("savedCheckboxStatus") &&
-      localStorage.getItem("savedMovieRequest")
-    ) {
-      const localData = {
-        movieRequest: JSON.parse(localStorage.getItem("savedMovieRequest")),
-        checkboxStatus: JSON.parse(localStorage.getItem("savedCheckboxStatus")),
-      };
-      return localData;
-    }
-  }
+  const [movies, setMovies] = useState(savedMovies);
 
   function handleCheckboxSearch(checkboxStatus) {
-    localStorage.setItem(
-      "savedCheckboxStatus",
-      JSON.stringify(!checkboxStatus)
+    const resMovies = handleMovieResponse(
+      savedMovies,
+      movieRequest,
+      !checkboxStatus
     );
-    if (getLocalData()) {
-      const localData = getLocalData();
-      const resMovies = handleMovieResponse(
-        savedMovies,
-        localData.movieRequest,
-        !checkboxStatus
-      );
-      setMovies(resMovies);
-    }
+    setMovies(resMovies);
   }
+
   function handleMovieSearch(movieRequest, checkboxStatus) {
     setIsPreloader(true);
-    localStorage.setItem("savedMovieRequest", JSON.stringify(movieRequest));
-    localStorage.setItem("savedCheckboxStatus", JSON.stringify(checkboxStatus));
     setAllreadySearch(true);
     const resMovies = handleMovieResponse(
       savedMovies,
@@ -58,18 +37,7 @@ function SavedMovies({ loggedIn, savedMovies, handleDeleteMovie }) {
   }
 
   useEffect(() => {
-    if (getLocalData()) {
-      const localData = getLocalData();
-      const movies = handleMovieResponse(
-        savedMovies,
-        localData.movieRequest,
-        localData.checkboxStatus
-      );
-      setMovies(movies);
-      setMovieRequest(localData.movieRequest);
-      setCheckboxStatus(localData.checkboxStatus);
-      setAllreadySearch(true);
-    }
+    setMovies(savedMovies);
   }, [savedMovies]);
 
   return (

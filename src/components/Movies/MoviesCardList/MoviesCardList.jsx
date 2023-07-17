@@ -25,8 +25,8 @@ function MoviesCardList({
   handleDeleteMovie,
   savedMovies,
 }) {
-  const location = useLocation();
 
+  const location = useLocation();
   const [moviesOnPage, setMoviesOnPage] = useState(DISPLAY_WIDTH_1280);
   const [addOnPage, setAddOnPage] = useState(ADD_CARD_WIDTH_MORE_768);
 
@@ -56,7 +56,7 @@ function MoviesCardList({
   function handleMoreMovie() {
     setMoviesOnPage(moviesOnPage + addOnPage);
   }
-  
+
   function checkSavedMovie(movie) {
     return savedMovies.find((savedMovie) => {
       return savedMovie.movieId === movie.id;

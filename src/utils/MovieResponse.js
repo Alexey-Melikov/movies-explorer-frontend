@@ -1,5 +1,5 @@
 function handleMovieResponse(movies, movieRequest, checkboxType) {
-  let resMovies = [];
+  let resMovies = movies;
 
   if (movieRequest !== "") {
     resMovies = movies.filter(
