@@ -1,3 +1,5 @@
+import { durationOfShortsFilm } from "./constans";
+
 function handleMovieResponse(movies, movieRequest, checkboxType) {
   let resMovies = movies;
 
@@ -10,7 +12,7 @@ function handleMovieResponse(movies, movieRequest, checkboxType) {
   }
 
   if (checkboxType) {
-    resMovies = resMovies.filter((movie) => movie.duration <= 40);
+    resMovies = resMovies.filter((movie) => movie.duration <= durationOfShortsFilm);
   }
 
   return resMovies;

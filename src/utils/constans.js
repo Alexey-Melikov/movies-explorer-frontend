@@ -11,6 +11,8 @@ const DISPLAY_WIDTH_320 = 5;
 const ADD_CARD_WIDTH_MORE_768 = 3;
 const ADD_CARD_WIDTH_LESS_768 = 2;
 
+const durationOfShortsFilm = 40;
+
 export {
   MOVIES_API,
   MAIN_API,
@@ -20,5 +22,6 @@ export {
   ADD_CARD_WIDTH_MORE_768,
   ADD_CARD_WIDTH_LESS_768,
   REGEX_EMAIL,
-  REGEX_NAME
+  REGEX_NAME,
+  durationOfShortsFilm,
 };
