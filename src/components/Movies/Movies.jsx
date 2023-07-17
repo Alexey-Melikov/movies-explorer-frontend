@@ -76,6 +76,7 @@ function Movies({ loggedIn, handleLikeMovie, handleDeleteMovie, savedMovies }) {
   }
 
   function handleCheckboxSearch(checkboxStatus) {
+    localStorage.setItem("checkboxStatus", JSON.stringify(!checkboxStatus));
     if (getLocalData()) {
       const localData = getLocalData();
       const movies = handleMovieResponse(

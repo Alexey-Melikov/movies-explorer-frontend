@@ -107,6 +107,8 @@ function App() {
     localStorage.removeItem("beatfilm-movies");
     localStorage.removeItem("movieRequest");
     localStorage.removeItem("movies");
+    localStorage.removeItem("savedCheckboxStatus");
+    localStorage.removeItem("savedMovieRequest");
     navigate("/");
   }
   //Token check =>
