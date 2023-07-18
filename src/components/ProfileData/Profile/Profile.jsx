@@ -18,7 +18,8 @@ function Profile({
   const [isDataDifferent, setIsDataDifferent] = useState(false);
 
   const currentUser = useContext(CurrentUserContext);
-  const { values, errors, isValid, handleChange } = useFormValidation();
+  const { values, errors, isValid, handleChange, resetForm } =
+    useFormValidation();
 
   function onSubmitProfileForm(e) {
     e.preventDefault();
@@ -39,10 +40,18 @@ function Profile({
   }
 
   useEffect(() => {
-    currentUser.name === values.profileName
-      ? setIsDataDifferent(true)
-      : setIsDataDifferent(false);
+    currentUser.name !== values.profileName ||
+    currentUser.email !== values.profileEmail
+      ? setIsDataDifferent(false)
+      : setIsDataDifferent(true);
   }, [values, currentUser]);
+
+  useEffect(() => {
+    resetForm({
+      profileName: currentUser.name,
+      profileEmail: currentUser.email,
+    });
+  }, [currentUser, resetForm]);
 
   return (
     <>
