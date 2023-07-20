@@ -1,19 +1,19 @@
 import "./AboutMe.css";
 import initialStudent from "../../../images/pictures/initial-student.svg";
+import mainPhoto from "../../../images/pictures/MainPhoto1.jpg";
 
 function AboutMe() {
   return (
     <section className="about-me" id="about-me">
       <h2 className="about-me__title-student">Студент</h2>
       <div className="about-me__container-info">
-        <h2 className="about-me__title">Виталий</h2>
-        <h3 className="about-me__subtitle">Фронтенд-разработчик, 30 лет</h3>
+        <h2 className="about-me__title">Алексей</h2>
+        <h3 className="about-me__subtitle">Фронтенд-разработчик, 29 лет</h3>
         <p className="about-me__description">
-          Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня
-          есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом.
-          Недавно начал кодить. С 2015 года работал в компании «СКБ Контур».
-          После того, как прошёл курс по веб-разработке, начал заниматься
-          фриланс-заказами и ушёл с постоянной работы.
+          Я родился и живу в Санкт-Петербурну, закончил
+          экономико-технологический институт, по специальности Технолог. Женат,
+          детей нет. Я изучаю веб-разработку с 2022 года. Увлекаюсь фондовой
+          биржей, люблю смотреть кино, слушать музыку.
         </p>
         <a
           className="about-me__link hover"
@@ -23,11 +23,7 @@ function AboutMe() {
         >
           Github
         </a>
-        <img
-          className="about-me__img"
-          src={initialStudent}
-          alt="Фото студента"
-        />
+        <img className="about-me__img" src={mainPhoto} alt="Фото студента" />
       </div>
     </section>
   );
