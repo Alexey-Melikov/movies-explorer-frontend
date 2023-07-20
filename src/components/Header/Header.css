@@ -1,0 +1,146 @@
+.header {
+  background-color: #073042;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 70px;
+}
+
+.header__logo-auth{
+  cursor: pointer;
+  background-image: url("../../images/logo/header-logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 38px;
+  height: 38px;
+}
+
+.header-theme-dark {
+  background-color: #202020;
+}
+
+.header__navigation-auth {
+  height: 38px;
+  width: 1140px;
+  display: flex;
+}
+
+.header__nav-auth {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.header__button-auth {
+  border-radius: 3px;
+  text-decoration: none;
+  background-color: #3ddc84;
+  width: 76px;
+  height: 32px;
+  color: #000000;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  align-self: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__link-auth {
+  align-self: center;
+  cursor: poiner;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .header__link-auth {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 16px;
+    padding-right: 14px;
+  }
+  .header__button-auth {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}
+
+/* MOVIE */
+
+.header__navigation-movie {
+  display: grid;
+  grid-template-columns: 67px min-content 170px 1fr;
+  align-items: center;
+  width: 100%;
+  column-gap: 16px;
+}
+
+.header__navigation-movie-link {
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.header__navigation-movie-button {
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0;
+  text-decoration: none;
+}
+
+.header__navigation-movie-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #313131;
+  margin-left: 13px;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .header__navigation-movie {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
