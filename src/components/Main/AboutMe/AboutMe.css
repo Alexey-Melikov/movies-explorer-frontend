@@ -76,6 +76,8 @@
 .about-me__img {
   grid-area: img;
   justify-self: end;
+  width: 100%;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 800px) {
